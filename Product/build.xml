@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="NHINC" basedir=".">
+
+    <property environment="env" />
+
+    <script language="javascript">
+        <![CDATA[
+      importClass(java.io.File);
+      var codeLinePath = new File(self.getLocation().getFileName()).getParentFile().getParent();
+      project.setProperty("codeline.directory.path", codeLinePath);
+     ]]>
+    </script>
+
+    <property name="root.project.directory.path" value="${codeline.directory.path}/Product" />
+
+    <import file="./Install/deploy.xml" />
+    
+    <condition property="progress-filepath" value="${java.io.tmpdir}/ant-progress.txt">
+        <not>
+            <isset property="progress-filepath" />
+        </not>
+    </condition>
+
+    <target name="deploy" depends="copy.deployable.artifacts" description="Deploy all projects: run ant help for more info...">
+        <antcall target="deploy.to.production" />
+    </target>
+
+    <target name="copy.deployable.artifacts">
+        <delete dir="${deployment.binaries.dir}" />
+        <mkdir dir="${deployment.binaries.dir}" />
+        <delete dir="${deployment.dir}/ValidationSuite" />
+        <mkdir dir="${deployment.dir}/ValidationSuite" />
+
+        <copy todir="${deployment.dir}/${deployment.environment.configuration.dir.name}" verbose="true" overwrite="true">
+            <fileset dir="${root.project.directory.path}/Production/Common/Properties/${deployment.environment.configuration.dir.name}" />
+        </copy>
+
+        <copy todir="${deployment.interfaces.dir}" verbose="true" overwrite="true">
+            <fileset dir="${root.project.directory.path}/Production/Common/Interfaces/src" />
+        </copy>
+
+        <copy todir="${deployment.dir}/ValidationSuite" verbose="true" overwrite="true">
+            <fileset dir="${root.project.directory.path}/SoapUI_Test/ValidationSuite" />
+        </copy>
+    </target>
+
+    <target name="dist" description="Create the binary distribution">
+        <property name="dist.artifact.dir" value="./target" />
+        <property name="maven_root" value="${user.home}/.m2/repository/org/connectopensource" />
+        <property name="maven_version" value="4.0.0-SNAPSHOT" />
+        <property name="dist.zip.filename" value="CONNECT-${maven_version}.zip" />
+
+        <delete dir="${dist.artifact.dir}" failonerror="false" />
+        <mkdir dir="${dist.artifact.dir}" />
+
+        <zip zipfile="${dist.artifact.dir}/${dist.zip.filename}">
+            <zipfileset file="${maven_root}/CONNECT/${maven_version}/CONNECT-${maven_version}.ear" />
+            <zipfileset prefix="Properties" src="${maven_root}/Properties/${maven_version}/Properties-${maven_version}.jar" excludes="**/META-INF/**/*" />
+            <zipfileset prefix="DBScripts" src="${maven_root}/DBScripts/${maven_version}/DBScripts-${maven_version}.jar" excludes="**/META-INF/**/*" />
+            <zipfileset prefix="ValidationSuite" dir="SoapUI_Test/ValidationSuite">
+                <include name="src/test/resources/chaincerts/**" />
+                <include name="*.xml" />
+                <include name="*.properties" />
+                <exclude name="pom.xml" />
+            </zipfileset>
+            <zipfileset prefix="glassfish_templates" dir="./Install/Glassfish/templates" />
+        </zip>
+    </target>
+</project>
