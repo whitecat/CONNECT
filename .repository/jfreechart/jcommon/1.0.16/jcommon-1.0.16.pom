@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>jfree</groupId>
+    <artifactId>jcommon</artifactId>
+    <packaging>jar</packaging>
+    <name>JCommon</name>
+    <version>1.0.16</version>
+    <description>
+    JCommon is a free general purpose Java class library that is used in
+    several projects at www.jfree.org, including JFreeChart and
+    JFreeReport.
+    </description>
+    <url>http://www.jfree.org/jcommon/</url>
+    <licenses>
+        <license>
+            <name>GNU Lesser General Public Licence</name>
+            <url>http://www.gnu.org/licenses/lgpl.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <scm>
+        <url>http://jfreechart.cvs.sourceforge.net/viewvc/jfreechart/jcommon/</url>
+    </scm>
+    <dependencies>
+    </dependencies>
+</project>

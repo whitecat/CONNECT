@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.forgerock.openam</groupId>
+    <artifactId>clientsdk</artifactId>
+    <version>10.0.0</version>
+    <name>OpenAM ClientSDK</name>
+    <description>OpenAM ClientSDK for remote applications</description>
+    <url>https://wikis.forgerock.org/confluence/display/openam/Home</url>
+
+    <issueManagement>
+        <system>jira</system>
+        <url>https://bugster.forgerock.org/jira/browse/OPENAM</url>
+    </issueManagement>
+
+    <licenses>
+        <license>
+            <name>CDDL License, Version 1.0</name>
+            <url>http://www.opensource.org/licenses/cddl1.php</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:svn:https://svn.forgerock.org/openam/trunk</connection>
+        <developerConnection>scm:svn:https://svn.forgerock.org/openam/trunk</developerConnection>
+        <url>http://sources.forgerock.org/changelog/openam/trunk</url>
+    </scm>
+
+    <organization>
+        <name>ForgeRock</name>
+        <url>http://www.forgerock.com</url>
+    </organization>
+
+    <developers>
+        <developer>
+            <name>Steve Ferris</name>
+            <id>steve</id>
+            <email>replaceme@nos#pam.forgerock.org</email>
+            <organization>ForgeRock</organization>
+        </developer>
+        <developer>
+            <name>Jonathan Scudder</name>
+            <id>jonathan</id>
+            <email>replaceme@nos#pam.forgerock.org</email>
+            <organization>ForgeRock</organization>
+        </developer>
+        <developer>
+            <name>Allan Foster</name>
+            <id>guruallan</id>
+            <email>replaceme@nos#pam.forgerock.org</email>
+            <organization>ForgeRock</organization>
+        </developer>
+        <developer>
+            <name>Victor Ake</name>
+            <id>victor</id>
+            <email>replaceme@nos#pam.forgerock.org</email>
+            <organization>ForgeRock</organization>
+        </developer>
+    </developers>
+</project>

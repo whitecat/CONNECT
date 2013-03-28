@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+  
+      http://www.apache.org/licenses/LICENSE-2.0
+  
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.    
+  -->
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>dnsjava</groupId>
+  <artifactId>dnsjava</artifactId>
+  <version>2.0.8</version>
+  <name>dnsjava</name>
+  <description>dnsjava is an implementation of DNS in Java. It supports all defined record types (including the DNSSEC types), and unknown types. It can be used for queries, zone transfers, and dynamic updates. It includes a cache which can be used by clients, and a minimal implementation of a server. It supports TSIG authenticated messages, partial DNSSEC verification, and EDNS0. </description>
+  <url>http://www.dnsjava.org</url>
+  <licenses>
+    <license>
+      <name>BSD license</name>
+      <url>http://www.dnsjava.org/README</url>
+    </license>
+  </licenses>
+  <scm>
+    <connection>https://dnsjava.svn.sourceforge.net/svnroot/dnsjava</connection>
+    <url>http://dnsjava.svn.sourceforge.net/viewvc/dnsjava/</url>
+  </scm>
+</project>
